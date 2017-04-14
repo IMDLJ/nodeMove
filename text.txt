@@ -1,0 +1,6 @@
+npm install express --save
+npm install jade --save
+npm install mongoose --save
+npm install bower -g
+bower install bootstrap
+
