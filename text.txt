@@ -1,4 +1,9 @@
+//新版express已不支持app.use(express.bodyParser());
+
+
 npm install express --save
+npm install serve-static --save
+npm install body-parser --save
 npm install jade --save
 npm install mongoose --save
 npm install bower -g
