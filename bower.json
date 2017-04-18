@@ -1,0 +1,22 @@
+{
+  "name": "nodemovie",
+  "description": "0.0.1",
+  "main": "app.js",
+  "authors": [
+    "Silence"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/IMDLJ/nodeMovie",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
