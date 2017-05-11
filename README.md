@@ -40,3 +40,11 @@ db.movies.find({}).count()
 首页： http://127.0.0.1:3000/
 编辑电影后台:  http://127.0.0.1:3000/admin/movie
 后台电影列表:  http://127.0.0.1:3000/admin/list
+
+
+#安装grunt
+npm install grunt -g   
+npm install grunt-cli -g
+npm install grunt-contrib-watch --save-dev    //监听文件变动
+npm install grunt-nodemon --save-dev
+npm install grunt-concurrent --save-dev
