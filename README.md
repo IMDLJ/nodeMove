@@ -1,4 +1,4 @@
-// npm安装模块
+# npm安装模块
 npm install express --save
 npm install serve-static --save
 npm install body-parser --save
@@ -9,7 +9,7 @@ bower install bootstrap
 
 npm install underscore --save
 
-// mongodb数据库
+# mongodb数据库
 // 创建数据库 
 use nodemovie
 
@@ -36,15 +36,16 @@ db.movies.find({})
 // 查询表的记录数
 db.movies.find({}).count()
 
-
+# 页面地址
 首页： http://127.0.0.1:3000/
 编辑电影后台:  http://127.0.0.1:3000/admin/movie
 后台电影列表:  http://127.0.0.1:3000/admin/list
 
 
 #安装grunt
-npm install grunt -g   
 npm install grunt-cli -g
+// 下面几个插件需要安装在项目中
+npm install grunt --save-dev 
 npm install grunt-contrib-watch --save-dev    //监听文件变动
 npm install grunt-nodemon --save-dev
 npm install grunt-concurrent --save-dev
