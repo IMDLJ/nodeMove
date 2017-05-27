@@ -9,9 +9,12 @@ bower install bootstrap
 
 npm install underscore --save
 
+npm install express-session --save
+npm install connect-mongo --save
+
 # mongodb数据库
 // 创建数据库 
-use nodemovie
+use nodemovie 
 
 // 向表中插入数据
 db.movies.insert({
@@ -49,3 +52,7 @@ npm install grunt --save-dev
 npm install grunt-contrib-watch --save-dev    //监听文件变动
 npm install grunt-nodemon --save-dev
 npm install grunt-concurrent --save-dev
+
+#运行项目
+grunt
+
