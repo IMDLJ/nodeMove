@@ -40,12 +40,11 @@ db.movies.find({})
 db.movies.find({}).count()
 
 # 页面地址
-首页： http://127.0.0.1:3000/
-编辑电影后台:  http://127.0.0.1:3000/admin/movie
-后台电影列表:  http://127.0.0.1:3000/admin/list
+// 首页： http://127.0.0.1:3000/
+// 编辑电影后台:  http://127.0.0.1:3000/admin/movie
+// 后台电影列表:  http://127.0.0.1:3000/admin/list
 
-
-#安装grunt
+# 安装grunt
 npm install grunt-cli -g
 // 下面几个插件需要安装在项目中
 npm install grunt --save-dev 
@@ -53,6 +52,6 @@ npm install grunt-contrib-watch --save-dev    //监听文件变动
 npm install grunt-nodemon --save-dev
 npm install grunt-concurrent --save-dev
 
-#运行项目
+# 运行项目
 grunt
 
