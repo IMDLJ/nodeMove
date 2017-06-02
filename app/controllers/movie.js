@@ -15,6 +15,7 @@ exports.detail = function(req, res){
 exports.new = function(req, res){
     res.render('admin',{
         title: "后台录入页",
+        btnName: "录入",
         movie: {
             title: '',
             doctor: '',
@@ -35,6 +36,7 @@ exports.update = function(req, res){
         Movie.findById(id, function(err, movie){
             res.render('admin', {
                 title: "后台更新页",
+                btnName: "保存",
                 movie: movie
             })
         })

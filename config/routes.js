@@ -19,6 +19,8 @@ module.exports = function(app){
     //User 
     app.post('/user/signup', User.signup) //signup 用户注册
     app.post('/user/signin', User.signin) //signin 用户登录
+    app.get('/signin', User.showSignin) //用户登录页面
+    app.get('/signup', User.showSignup) //用户注册页面
     app.get('/logout', User.logout)  //logout 用户退出
     app.get('/admin/userlist', User.list) //userlist page 用户列表页
 

@@ -1,5 +1,19 @@
 var User = require('../models/user')
 
+//注册页面
+exports.showSignup =  function(req, res){
+    res.render('signup', {
+        title:'注册页面'
+    })
+}
+
+//登录页面
+exports.showSignin =  function(req, res){
+    res.render('signin', {
+        title:'登录页面'
+    })
+}
+
 //signup  用户注册
 exports.signup =  function(req, res){
     var _user = req.body.user
@@ -11,7 +25,7 @@ exports.signup =  function(req, res){
             console.log(err)
         }
         if(user){
-            return res.redirect('/')
+            return res.redirect('/signin')
         }else{
             var user = new User(_user)
             user.save(function(err, user){
@@ -19,7 +33,7 @@ exports.signup =  function(req, res){
                     console.log(err)
                 }
                 //console.log(user)
-                res.redirect('/admin/userlist')
+                res.redirect('/')
             })
         }
     })
@@ -35,7 +49,7 @@ exports.signin = function(req, res){
             console.log(err)
         }
         if(!user){
-            return res.redirect('/')
+            return res.redirect('/signup')
         }
         user.comparePassword(password, function(err, isMatch){
             if(err){
@@ -46,7 +60,8 @@ exports.signin = function(req, res){
 
                 return res.redirect('/')
             }else{
-                console.log('password is not matched')
+                //console.log('password is not matched')
+                return res.redirect('/signin')
             }
         })
     })

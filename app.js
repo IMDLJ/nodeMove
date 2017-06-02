@@ -21,6 +21,8 @@ app.set('view engine', 'jade')
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(serveStatic('public'))
 app.use(session({
+    resave: true,  // 新增
+    saveUninitialized: true,  // 新增
     secret: 'nodemovie',
     store: new mongoStore({
         url: dbUrl,
