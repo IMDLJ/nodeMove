@@ -12,6 +12,9 @@ npm install underscore --save
 npm install express-session --save
 npm install connect-mongo --save
 
+//express.logger 在express 4.0后已经迁出，现在为morgan，需要先:
+npm install morgan --save
+
 # mongodb数据库
 // 创建数据库 
 use nodemovie 
@@ -41,7 +44,7 @@ db.movies.find({}).count()
 
 # 页面地址
 // 首页： http://127.0.0.1:3000/
-// 编辑电影后台:  http://127.0.0.1:3000/admin/movie
+// 后台电影录入:  http://127.0.0.1:3000/admin/new
 // 后台电影列表:  http://127.0.0.1:3000/admin/list
 
 # 安装grunt
