@@ -1,13 +1,27 @@
+var _ = require('underscore')
 var Movie = require('../models/movie')
+var Comment = require('../models/comment')
 
 //detail page
 exports.detail = function(req, res){
     var id = req.params.id
     Movie.findById(id, function(err, movie){
-        res.render('detail', {
-            title: movie.title,
-            movie: movie
-        })
+        Comment.find({movie:id})
+			.populate('from','name')
+			.populate('reply.from reply.to','name')
+			.exec(function(err,comments){
+			//console.log('++' + comments);
+			res.render('detail',{
+				title:movie.title,
+				movie:movie,
+				comments:comments
+			});
+		});	
+        // res.render('detail', {
+        //     title: movie.title,
+        //     movie: movie,
+        //     comments:comments
+        // })
     })
 }
 
@@ -44,7 +58,7 @@ exports.update = function(req, res){
 }
 
 //admin post movie
-exports.save = function(res, req){
+exports.save = function(req, res){
     var id = req.body.movie._id
     var movieObj = req.body.movie
     var _movie

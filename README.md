@@ -21,7 +21,6 @@ use nodemovie
 
 // 向表中插入数据
 db.movies.insert({
-"__v":0,
 country: '美国',
 doctor: '比尔·康顿',
 flash: 'http://www.iqiyi.com/common/flashplayer/20170406/1556f98c2359.swf',
@@ -44,8 +43,9 @@ db.movies.find({}).count()
 
 # 页面地址
 // 首页： http://127.0.0.1:3000/
-// 后台电影录入:  http://127.0.0.1:3000/admin/new
-// 后台电影列表:  http://127.0.0.1:3000/admin/list
+// 后台电影录入:  http://127.0.0.1:3000/admin/movie/new
+// 后台电影列表:  http://127.0.0.1:3000/admin/movie/list
+// 用户列表页： http://127.0.0.1:3000/admin/user/list
 
 # 安装grunt
 npm install grunt-cli -g
