@@ -35,8 +35,15 @@ year: 2017,
 summary: '为了解救触怒野兽的父亲，勇敢善良的贝儿只身一人来到古堡，代替父亲被囚禁其中。贝儿克服了恐惧，和城堡里的魔法家具们成为了朋友，也渐渐发现野兽其实是受了诅咒的王子，他可怕的外表下藏着一颗善良温柔的内心。'
 })
 
+//查询全部表
+show tables;
+categories \ comments \ movies \ sessions \ users
+
 // 查询表
 db.movies.find({})
+
+//删除表数据
+db.movies.remove({})
 
 // 查询表的记录数
 db.movies.find({}).count()

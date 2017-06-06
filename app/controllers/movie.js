@@ -1,6 +1,7 @@
 var _ = require('underscore')
 var Movie = require('../models/movie')
 var Comment = require('../models/comment')
+var Category = require('../models/category')
 
 //detail page
 exports.detail = function(req, res){
@@ -10,36 +11,25 @@ exports.detail = function(req, res){
 			.populate('from','name')
 			.populate('reply.from reply.to','name')
 			.exec(function(err,comments){
-			//console.log('++' + comments);
-			res.render('detail',{
-				title:movie.title,
-				movie:movie,
-				comments:comments
-			});
-		});	
-        // res.render('detail', {
-        //     title: movie.title,
-        //     movie: movie,
-        //     comments:comments
-        // })
+                console.log('++' + comments);
+                res.render('detail',{
+                    title:movie.title,
+                    movie:movie,
+                    comments:comments
+                });
+		    });	
     })
 }
 
 //admin new page
 exports.new = function(req, res){
-    res.render('admin',{
-        title: "后台录入页",
-        btnName: "录入",
-        movie: {
-            title: '',
-            doctor: '',
-            country: '',
-            year: '',
-            poster: '',
-            flash: '',
-            summary: '',
-            language: ''
-        }
+    Category.find({}, function(err, categories){
+         res.render('admin',{
+            title: "后台录入页",
+            btnName: "录入",
+            categories: categories,
+            movie: {}
+        })
     })
 }
 
@@ -67,7 +57,7 @@ exports.save = function(req, res){
         movieObj.poster = req.poster
     }
 
-    if(id != 'underfined'){
+    if(id){
         Movie.findById(id, function(err, movie){
             if(err){
                 console.log(err)
@@ -77,25 +67,25 @@ exports.save = function(req, res){
                 if(err){
                     console.log(err)
                 }
-                res.redirect('/movie/'+ movie._id)
+                //res.redirect('/movie/'+ movie._id)
+                res.redirect('/admin/movie/list')
             })
         })
     }else{
-        _movie = new Movie({
-            doctor: movieObj.doctor,
-            title: movieObj.title,
-            country: movieObj.country,
-            language: movieObj.language,
-            year: movieObj.year,
-            poster: movieObj.poster,
-            summary: movieObj.summary,
-            flash: movieObj.flash
-        })
+        _movie = new Movie(movieObj)
+        var categoryId = _movie.category
         _movie.save(function(err, movie){
             if(err){
                 console.log(err)
             }
-            res.redirect('/movie/'+ movie._id)
+            Category.findById(categoryId, function(err, category){
+                category.movies.push(movie._id)
+
+                category.save(function(err, category){
+                    //res.redirect('/movie/'+ movie._id)
+                    res.redirect('/admin/movie/list')
+                })
+            })
         })
     }
 }

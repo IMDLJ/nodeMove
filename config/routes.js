@@ -3,6 +3,7 @@ var Index = require('../app/controllers/index')
 var Movie = require('../app/controllers/movie')
 var User = require('../app/controllers/user')
 var Comment = require('../app/controllers/comment')
+var Category = require('../app/controllers/category')
 
 module.exports = function(app){
     //pre handle user
@@ -35,4 +36,10 @@ module.exports = function(app){
 
     //comment
     app.post('/user/comment', User.signinRequired, User.adminRequired, Comment.save)
+
+    //category
+    app.get('/admin/category/new', User.signinRequired, User.adminRequired, Category.new) //admin new page 新增电影分类页
+    app.post('/admin/category', User.signinRequired, User.adminRequired, Category.save) //admin post movie 电影分类保存
+    app.get('/admin/category/list', User.signinRequired, User.adminRequired, Category.list) //list page 电影列表
+    app.delete('/admin/category/list', User.signinRequired, User.adminRequired, Category.del) //list delete movie 电影分类删除
 }
