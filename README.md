@@ -53,6 +53,8 @@ db.movies.find({}).count()
 // 后台电影录入:  http://127.0.0.1:3000/admin/movie/new
 // 后台电影列表:  http://127.0.0.1:3000/admin/movie/list
 // 用户列表页： http://127.0.0.1:3000/admin/user/list
+// 电影分类新增页：http://127.0.0.1:3000/admin/category/new
+// 电影分类列表页：http://127.0.0.1:3000/admin/category/list
 
 # 安装grunt
 npm install grunt-cli -g
