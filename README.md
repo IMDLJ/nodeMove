@@ -15,6 +15,8 @@ npm install connect-mongo --save
 //express.logger 在express 4.0后已经迁出，现在为morgan，需要先:
 npm install morgan --save
 
+npm install connect-multiparty --save
+
 # mongodb数据库
 // 创建数据库 
 use nodemovie 

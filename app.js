@@ -9,6 +9,9 @@ var mongoStore = require('connect-mongo')(session)
 
 var logger = require('morgan') //express.logger 在express 4.0后已经迁出，现在为morgan
 
+var multipart = require('connect-multiparty')
+var multipartMiddleware = multipart()
+
 var port =process.env.PORT || 3000
 var app = express()
 var dbUrl = 'mongodb://localhost/nodemovie'  //数据库地址
@@ -20,6 +23,7 @@ app.set('view engine', 'jade')
 
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(serveStatic('public'))
+app.use(multipartMiddleware)
 app.use(session({
     resave: true,  // 新增
     saveUninitialized: true,  // 新增

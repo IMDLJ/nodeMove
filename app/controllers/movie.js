@@ -2,6 +2,8 @@ var _ = require('underscore')
 var Movie = require('../models/movie')
 var Comment = require('../models/comment')
 var Category = require('../models/category')
+var fs = require('fs')
+var path = require('path')
 
 //detail page
 exports.detail = function(req, res){
@@ -47,6 +49,30 @@ exports.update = function(req, res){
                 })
             })
         })
+    }
+}
+
+//admin poster
+exports.savePoster = function(req, res, next){
+    var posterData = req.files.uploadPoster
+    var filePath = posterData.path
+    var originalFilename = posterData.originalFilename
+
+    console.log(req.files)
+    if(originalFilename){
+        fs.readFile(filePath, function(err, data){
+            var timestamp = Date.now()
+            var type = posterData.type.split('/')[1]
+            var poster = timestamp + '.' + type
+            var newPath = path.join(__dirname, '../../', 'public/upload/' + poster)
+
+            fs.writeFile(newPath, data, function(err){
+                req.poster = poster
+                next()
+            })
+        })
+    }else{
+        next()
     }
 }
 

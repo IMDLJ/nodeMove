@@ -30,7 +30,7 @@ module.exports = function(app){
     app.get('/movie/:id', Movie.detail) //detail page 电影详情页
     app.get('/admin/movie/new', User.signinRequired, User.adminRequired, Movie.new) //admin new page 新增电影页
     app.get('/admin/movie/update/:id', User.signinRequired, User.adminRequired, Movie.update) //admin update movie 电影更新页
-    app.post('/admin/movie', User.signinRequired, User.adminRequired, Movie.save) //admin post movie 电影保存
+    app.post('/admin/movie', User.signinRequired, User.adminRequired, Movie.savePoster, Movie.save) //admin post movie 电影保存
     app.get('/admin/movie/list', User.signinRequired, User.adminRequired, Movie.list) //list page 电影列表
     app.delete('/admin/movie/list', User.signinRequired, User.adminRequired, Movie.del) //list delete movie 电影删除
 
@@ -42,4 +42,7 @@ module.exports = function(app){
     app.post('/admin/category', User.signinRequired, User.adminRequired, Category.save) //admin post movie 电影分类保存
     app.get('/admin/category/list', User.signinRequired, User.adminRequired, Category.list) //list page 电影列表
     app.delete('/admin/category/list', User.signinRequired, User.adminRequired, Category.del) //list delete movie 电影分类删除
+
+    //results
+    app.get('/results', Index.search)
 }
