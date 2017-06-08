@@ -144,15 +144,17 @@ exports.save = function(req, res){
 
 //list page
 exports.list = function(req, res){
-    Movie.fetch(function(err, movies){
-        if(err){
-            console.log(err)
-        }
-        res.render('list',{
-            title: "后台列表页",
-            movies: movies
+    Movie.find({})
+        .populate('category', 'name')
+        .exec(function(err, movies){
+            if(err){
+                console.log(err)
+            }
+            res.render('list',{
+                title: '电影列表页',
+                movies: movies
+            })
         })
-    })
 }
 
 //list delete movie
