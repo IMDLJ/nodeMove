@@ -2,6 +2,7 @@
 npm install express --save
 npm install serve-static --save
 npm install body-parser --save
+npm install cookie-parser --save
 npm install jade --save
 npm install mongoose --save
 npm install bower -g
@@ -65,6 +66,14 @@ npm install grunt --save-dev
 npm install grunt-contrib-watch --save-dev    //监听文件变动
 npm install grunt-nodemon --save-dev
 npm install grunt-concurrent --save-dev
+//test测试 
+//运行测试 grunt test
+npm install grunt-mocha-test --save-dev
+npm install mocha --save-dev
+npm install should --save
+
+npm install crypto --save
+npm install bcrypt --save
 
 # 运行项目
 grunt

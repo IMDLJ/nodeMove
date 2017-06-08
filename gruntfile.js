@@ -39,6 +39,16 @@ module.exports=function(grunt){
             options: {
                 logConcurrentOutput: true
             }
+        },
+        mochaTest: {
+            options: {
+                reporter: 'spec',
+                captureFile: 'results.txt', 
+                quiet: false, 
+                clearRequireCache: false, 
+                noFail: false 
+            },
+            src: ['test/**/*.js']
         }
     })
 
@@ -46,9 +56,12 @@ module.exports=function(grunt){
     grunt.loadNpmTasks('grunt-contrib-watch')
     grunt.loadNpmTasks('grunt-nodemon')
     grunt.loadNpmTasks('grunt-concurrent')
+    grunt.loadNpmTasks('grunt-mocha-test')
 
     grunt.option('force', true)
 
     // 默认被执行的任务列表。
     grunt.registerTask('default', ['concurrent'])
+
+    grunt.registerTask('test', ['mochaTest'])
 }

@@ -5,6 +5,9 @@ var User = require('../app/controllers/user')
 var Comment = require('../app/controllers/comment')
 var Category = require('../app/controllers/category')
 
+var multipart = require('connect-multiparty')
+var multipartMiddleware = multipart()
+
 module.exports = function(app){
     //pre handle user
     app.use(function(req, res, next){
@@ -30,7 +33,7 @@ module.exports = function(app){
     app.get('/movie/:id', Movie.detail) //detail page 电影详情页
     app.get('/admin/movie/new', User.signinRequired, User.adminRequired, Movie.new) //admin new page 新增电影页
     app.get('/admin/movie/update/:id', User.signinRequired, User.adminRequired, Movie.update) //admin update movie 电影更新页
-    app.post('/admin/movie', User.signinRequired, User.adminRequired, Movie.savePoster, Movie.save) //admin post movie 电影保存
+    app.post('/admin/movie',multipartMiddleware, User.signinRequired, User.adminRequired, Movie.savePoster, Movie.save) //admin post movie 电影保存
     app.get('/admin/movie/list', User.signinRequired, User.adminRequired, Movie.list) //list page 电影列表
     app.delete('/admin/movie/list', User.signinRequired, User.adminRequired, Movie.del) //list delete movie 电影删除
 

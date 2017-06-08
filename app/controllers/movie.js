@@ -9,6 +9,11 @@ var path = require('path')
 exports.detail = function(req, res){
     var id = req.params.id
     Movie.findById(id, function(err, movie){
+        Movie.update({_id: id}, {$inc: {pv:1}}, function(err){
+            if(err){
+                console.log(err)
+            }
+        })
         Comment.find({movie:id})
 			.populate('from','name')
 			.populate('reply.from reply.to','name')

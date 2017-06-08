@@ -17,6 +17,9 @@ exports.showSignin =  function(req, res){
 //signup  用户注册
 exports.signup =  function(req, res){
     var _user = req.body.user
+
+    //var _userid = req.params.
+    //console.log(req.params)
     //console.log(_user)
     //req.param('user')
 
