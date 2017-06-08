@@ -5,8 +5,8 @@ npm install body-parser --save
 npm install cookie-parser --save
 npm install jade --save
 npm install mongoose --save
-npm install bower -g
-bower install bootstrap
+// npm install bower -g
+// bower install bootstrap
 
 npm install underscore --save
 
