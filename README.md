@@ -1,29 +1,27 @@
-# npm安装模块
+## npm安装模块
+```bash
 npm install express --save
 npm install serve-static --save
 npm install body-parser --save
 npm install cookie-parser --save
 npm install jade --save
 npm install mongoose --save
-// npm install bower -g
-// bower install bootstrap
-
+ // npm install bower -g
+ // bower install bootstrap
 npm install underscore --save
-
 npm install express-session --save
 npm install connect-mongo --save
-
-//express.logger 在express 4.0后已经迁出，现在为morgan，需要先:
-npm install morgan --save
-
+```
+//express.logger 在express 4.0后已经迁出，现在为morgan，需要先:npm install morgan --save
+```bash
 npm install connect-multiparty --save
-
-# mongodb数据库
+```
+## mongodb数据库
 // 创建数据库 
-use nodemovie 
+  * use nodemovie 
 
 // 向表中插入数据
-db.movies.insert({
+  * db.movies.insert({
 country: '美国',
 doctor: '比尔·康顿',
 flash: 'http://www.iqiyi.com/common/flashplayer/20170406/1556f98c2359.swf',
@@ -39,42 +37,47 @@ summary: '为了解救触怒野兽的父亲，勇敢善良的贝儿只身一人�
 })
 
 //查询全部表
-show tables;
-categories \ comments \ movies \ sessions \ users
+  * show tables;
+  * categories \ comments \ movies \ sessions \ users
 
 // 查询表
-db.movies.find({})
+  * db.movies.find({})
 
 //删除表数据
-db.movies.remove({})
+  * db.movies.remove({})
 
 // 查询表的记录数
-db.movies.find({}).count()
+  * db.movies.find({}).count()
 
-# 页面地址
-// 首页： http://127.0.0.1:3000/
-// 后台电影录入:  http://127.0.0.1:3000/admin/movie/new
-// 后台电影列表:  http://127.0.0.1:3000/admin/movie/list
-// 用户列表页： http://127.0.0.1:3000/admin/user/list
-// 电影分类新增页：http://127.0.0.1:3000/admin/category/new
-// 电影分类列表页：http://127.0.0.1:3000/admin/category/list
+## 页面地址
+  *  首页： http://127.0.0.1:3000/
+  *  后台电影录入:  http://127.0.0.1:3000/admin/movie/new
+  *  后台电影列表:  http://127.0.0.1:3000/admin/movie/list
+  *  用户列表页： http://127.0.0.1:3000/admin/user/list
+  *  电影分类新增页：http://127.0.0.1:3000/admin/category/new
+  *  电影分类列表页：http://127.0.0.1:3000/admin/category/list
 
-# 安装grunt
+## 安装grunt
+```bash
 npm install grunt-cli -g
+```
 // 下面几个插件需要安装在项目中
+```bash
 npm install grunt --save-dev 
 npm install grunt-contrib-watch --save-dev    //监听文件变动
 npm install grunt-nodemon --save-dev
 npm install grunt-concurrent --save-dev
+```
 //test测试 
 //运行测试 grunt test
+```bash
 npm install grunt-mocha-test --save-dev
 npm install mocha --save-dev
 npm install should --save
-
 npm install crypto --save
 npm install bcrypt --save
+```
 
-# 运行项目
-grunt
+## 运行项目
+  * grunt
 
