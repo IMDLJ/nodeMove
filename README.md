@@ -13,15 +13,15 @@ npm install express-session --save
 npm install connect-mongo --save
 npm install connect-multiparty --save   // nodejs后台文件上传模块
 ```
-//express.logger 在express 4.0后已经迁出，现在为morgan，需要先:
+  * express.logger 在express 4.0后已经迁出，现在为morgan，需要先:
 ```bash
 npm install morgan --save
 ```
 ## mongodb数据库
-// 创建数据库 
+ 创建数据库 
   * use nodemovie 
 
-// 向表中插入数据
+ 向表中插入数据
   * db.movies.insert({
 country: '美国',
 doctor: '比尔·康顿',
@@ -37,17 +37,17 @@ year: 2017,
 summary: '为了解救触怒野兽的父亲，勇敢善良的贝儿只身一人来到古堡，代替父亲被囚禁其中。贝儿克服了恐惧，和城堡里的魔法家具们成为了朋友，也渐渐发现野兽其实是受了诅咒的王子，他可怕的外表下藏着一颗善良温柔的内心。'
 })
 
-//查询全部表
+查询全部表
   * show tables;
   * categories \ comments \ movies \ sessions \ users
 
-// 查询表
+查询表
   * db.movies.find({})
 
-//删除表数据
+删除表数据
   * db.movies.remove({})
 
-// 查询表的记录数
+查询表的记录数
   * db.movies.find({}).count()
 
 ## 页面地址
@@ -62,15 +62,15 @@ summary: '为了解救触怒野兽的父亲，勇敢善良的贝儿只身一人�
 ```bash
 npm install grunt-cli -g
 ```
-// 下面几个插件需要安装在项目中
+  * 下面几个插件需要安装在项目中
 ```bash
 npm install grunt --save-dev 
 npm install grunt-contrib-watch --save-dev    //监听文件变动
 npm install grunt-nodemon --save-dev
 npm install grunt-concurrent --save-dev
 ```
-//test测试 
-//运行测试 grunt test
+  * test测试 
+  * 运行测试 grunt test
 ```bash
 npm install grunt-mocha-test --save-dev
 npm install mocha --save-dev
