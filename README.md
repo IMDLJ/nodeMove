@@ -11,10 +11,11 @@ npm install mongoose --save
 npm install underscore --save
 npm install express-session --save
 npm install connect-mongo --save
+npm install connect-multiparty --save   // nodejs后台文件上传模块
 ```
-//express.logger 在express 4.0后已经迁出，现在为morgan，需要先:npm install morgan --save
+//express.logger 在express 4.0后已经迁出，现在为morgan，需要先:
 ```bash
-npm install connect-multiparty --save
+npm install morgan --save
 ```
 ## mongodb数据库
 // 创建数据库 
