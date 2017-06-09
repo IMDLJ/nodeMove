@@ -70,7 +70,6 @@ npm install grunt-nodemon --save-dev
 npm install grunt-concurrent --save-dev
 ```
   * test测试 
-  * 运行测试 grunt test
 ```bash
 npm install grunt-mocha-test --save-dev
 npm install mocha --save-dev
@@ -78,6 +77,7 @@ npm install should --save
 npm install crypto --save
 npm install bcrypt --save
 ```
+  * 运行测试 grunt test
 
 ## 运行项目
   * grunt
